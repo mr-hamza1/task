@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Check, Edit2, Plus, Trash2, X } from "lucide-react";
+import Link from "next/link";
 
 interface Task {
   _id: string;
@@ -113,13 +114,21 @@ export default function Home() {
         <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 transition-all duration-300">
           
           {/* Header */}
-          <div className="p-8 pb-6 border-b border-neutral-100 dark:border-neutral-800">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
-              Tasks
-            </h1>
-            <p className="text-neutral-500 dark:text-neutral-400 mt-2 text-sm">
-              Stay organized, focused, and get things done.
-            </p>
+          <div className="p-8 pb-6 border-b border-neutral-100 dark:border-neutral-800 flex items-start justify-between">
+            <div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                Tasks
+              </h1>
+              <p className="text-neutral-500 dark:text-neutral-400 mt-2 text-sm">
+                Stay organized, focused, and get things done.
+              </p>
+            </div>
+            <Link
+              href="/github"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-600 dark:hover:text-purple-400 transition-all"
+            >
+              GitHub Explorer →
+            </Link>
           </div>
 
           {/* Error Message */}
